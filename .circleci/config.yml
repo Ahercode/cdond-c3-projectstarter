@@ -75,11 +75,12 @@ jobs:
       - restore_cache:
           keys: [frontend-build]
       - run:
-          name: Rub frontend test
+          name: Run frontend test
           command: 
             cd frontend
             npm install
             npm run test
+
   test-backend:
     docker:
       - image: circleci/node:13.8.0
@@ -88,7 +89,7 @@ jobs:
       - restore_cache:
           keys: [backend-build]
       - run:
-          name: Rub backend test
+          name: Run backend test
           command: 
             cd backend
             npm install
