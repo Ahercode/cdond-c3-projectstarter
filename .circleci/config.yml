@@ -117,7 +117,7 @@ jobs:
       - restore_cache:
           keys: [backend-build]
       - run:
-          name: Analyse frontend
+          name: Analyse backend
           command: |
             cd backend
             npm install
