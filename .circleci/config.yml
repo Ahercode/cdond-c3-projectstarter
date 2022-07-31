@@ -228,7 +228,7 @@ jobs:
           paths:
             - project/backend
       - destroy-environment:
-          ID: ${CIRCLE_WORKFLOW_ID:0:7}
+          workflow_id: ${CIRCLE_WORKFLOW_ID:0:7}
       # Here's where you will add some code to rollback on failure 
 
   # run-migrations:
