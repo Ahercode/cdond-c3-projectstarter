@@ -1,5 +1,10 @@
 Description: >
-  Cloudfront distribution for UdaPeople by philip
+  Cloudfront distribution for UdaPeople by philip 
+  with: 
+    aws cloudformation deploy \
+         --template-file cloudfront.yml \
+         --stack-name InitialStack\
+         --parameter-overrides WorkflowID=udapeople-philip123
 
 Parameters:
   WorkflowID:
