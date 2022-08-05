@@ -230,7 +230,7 @@ jobs:
 
   run-migrations:
     docker:
-      - image: circleci/node:13.8.0 # safest to use to avoid migration errors
+      - image: circleci/node:16.10.0 # safest to use to avoid migration errors
     steps:
       - checkout
       - run:
