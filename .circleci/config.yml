@@ -1,4 +1,4 @@
-version: 2.1
+#version: 2.1
 
 orbs: 
   slack: circleci/slack@4.10.1
@@ -65,7 +65,7 @@ jobs:
           name: Build front-end
           command: |
             cd frontend
-            npm install
+            npm install 
             npm run build
       - save_cache:
           paths: [frontend/node_modules]
@@ -82,7 +82,7 @@ jobs:
           name: Back-end build
           command: |
             cd backend
-            npm install
+            sudo npm install -g npm
             npm run build
       - save_cache:
           paths: [backend/node_modules]
