@@ -82,7 +82,7 @@ jobs:
           name: Back-end build
           command: |
             cd backend
-            sudo npm install -g npm
+            sudo npm install  -g npm@8.17.0 to update!
             npm run build
       - save_cache:
           paths: [backend/node_modules]
