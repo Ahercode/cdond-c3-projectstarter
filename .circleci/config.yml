@@ -66,6 +66,7 @@ jobs:
           command: |
             cd frontend
             npm install 
+            npm audit fix
             npm run build
       - save_cache:
           paths: [frontend/node_modules]
@@ -82,7 +83,7 @@ jobs:
           name: Back-end build
           command: |
             cd backend
-            sudo npm install  -g npm@8.17.0 to update!
+            sudo npm install  -g npm@8.17.0
             npm run build
       - save_cache:
           paths: [backend/node_modules]
