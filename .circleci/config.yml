@@ -10,6 +10,24 @@ parameters:
     default: '${CIRCLE_WORKFLOW_ID:0:7}'
 
 commands:
+  install_awscli:
+      description: Install AWS CLI v2
+      steps:
+        - run:
+            name: Install AWS CLI v2
+            command: |
+              curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+              unzip awscliv2.zip
+              sudo ./aws/install
+
+  install_ansible:
+    description: Install Ansible
+    steps:
+      - run:
+          name: Install Ansible
+          command: |
+            python3 -m pip install --user ansible
+            
   destroy-environment:
     description: Destroy backend and frontend cloudformation stacks given a workflow ID.
     parameters:
@@ -47,23 +65,7 @@ commands:
             #  Add revert code here. You can find this in the Getting Started section.
               exit 1
             fi
-    install_awscli:
-      description: Install AWS CLI v2
-      steps:
-        - run:
-            name: Install AWS CLI v2
-            command: |
-              curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-              unzip awscliv2.zip
-              sudo ./aws/install
-
-    install_ansible:
-      description: Install Ansible
-      steps:
-        - run:
-            name: Install Ansible
-            command: |
-              python3 -m pip install --user ansible
+    
             
 jobs:
   build-frontend:
