@@ -3,7 +3,7 @@ Description: >
   aws cloudformation deploy \
     --template-file cloudfront.yml \
     --stack-name initialStack \
-    --parameter-overrides WorkflowID=udapeople-philip11 
+    --parameter-overrides WorkflowID=udapeople-philip1 
 Parameters:
   WorkflowID:
     Description: Unique identifier.
